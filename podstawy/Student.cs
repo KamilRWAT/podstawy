@@ -6,13 +6,15 @@ namespace podstawy
 {
     public class Student
     {
+        private bool alkohol;
         private string imie;
 
-        public  string Imie
+        public string Imie
         {
             get { return imie; }
             set { imie = value.ToLower(); }
         }
+
 
 
         private int wiek;
@@ -20,6 +22,10 @@ namespace podstawy
 		public int Wiek
 		{
 			get {
+                if( wiek < 18)
+                {
+                    alkohol = false;
+                }
                     int return_wiek = Convert.ToInt16(Math.Round(Convert.ToDouble(wiek)/10)*10);
                     return return_wiek;
                 }
